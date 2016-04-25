@@ -1,0 +1,28 @@
+{
+    "name": "larakit/lk-html",
+    "description": "Библиотека для Laravel для генерации HTML",
+    "keywords": [
+        "laravel 5",
+        "html",
+        "larakit"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexey Berdnikov",
+            "email": "aberdnikov@gmail.com"
+        }
+    ],
+    "require": {
+        "larakit/lk-spa": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Larakit\\Html\\": "src/Html"
+        },
+        "files": [
+            "src/init.php"
+        ]
+    },
+    "minimum-stability": "dev"
+}
