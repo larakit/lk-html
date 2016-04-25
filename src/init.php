@@ -34,6 +34,9 @@ Larakit\SPA::register_alias('HtmlVideo', Larakit\Html\Facades\Video::class);
 Larakit\Twig::register_function('html_progress', function () {
     return HtmlProgress::setContent('');
 });
+Larakit\Twig::register_function('html_map', function ($name, $id=null) {
+    return \HtmlMap::setName($name)->setId($id?$id:$name);
+});
 Larakit\Twig::register_function('html_progress_bar', function () {
     return HtmlProgressBar::setContent('');
 });

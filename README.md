@@ -31,6 +31,10 @@ $el->addClass($class)->removeClass($class);
 $el = \HtmlA::setHref('/')->setContent('TeXt');
 echo $el;
 ~~~
+или в шаблоне Twig
+~~~html
+{{ html_a('/').setContent('TeXt')|raw }}
+~~~
 результат
 ~~~html
 <a href="/">TeXt</a>
@@ -45,6 +49,11 @@ $el = \HtmlAbbr::setTitle('PHP: Hypertext Preprocessor')
     ->setContent('PHP')
     ->asInitialism();
 echo $el;
+~~~
+или в шаблоне Twig
+~~~html
+{{ html_abbr('HyperText Markup Language').setContent('HTML')|raw }}
+{{ html_abbr('PHP: Hypertext Preprocessor').setContent('PHP').asInitialism()|raw }}
 ~~~
 результат
 ~~~html
@@ -63,6 +72,13 @@ $map->addArea()->setShape('poly')
     ->setAttribute('777');
 echo $map;
 ~~~
+или в шаблоне Twig
+~~~html
+{% set map = html_map('map', 'map-123') %}
+{% set area = map.addArea().setShape('poly').setCoords('1601,15,1602,52,1676,52,1676,205,1590,203').setHref('/page123') %}
+{% set area = map.addArea().setShape('poly').setCoords('1676,205,1590,203,1591,170,1440,169,1439,14').setHref('777') %}
+{{ map|raw }}
+~~~
 результат
 ~~~html
 <map name="map" id="map-123">
@@ -76,6 +92,10 @@ echo $map;
 $el = \HtmlBlockquote::setAuthor('В.И. Ленин')
     ->setContent('Главная проблема цитат в интернете – люди сразу верят в их подлинность.');
 echo $el;
+~~~
+или в шаблоне Twig
+~~~html
+{{ html_blockquote('Главная проблема цитат в интернете – люди сразу верят в их подлинность.', 'В.И. Ленин')|raw }}
 ~~~
 результат
 ~~~html
@@ -95,6 +115,13 @@ $el = \HtmlButton::setContent('Удалить')
     ->addClass('disabled btn');
 echo $el;
 ~~~
+или в шаблоне Twig
+~~~html
+{{ html_button('Удалить')
+    .setTitle('Удаление не доступно')
+    .addClass('btn btn-danger')
+    .addClass('disabled btn')|raw }}
+~~~
 результат
 ~~~html
 <button class="btn btn-danger disabled" title="Удаление не доступно">Удалить</button>
@@ -110,6 +137,17 @@ $el->setContent(
 );    
 echo $el;
 ~~~
+или в шаблоне Twig
+~~~html
+{{
+    html_div(
+        html_div('Attribute').addClass('col-lg-6')
+        ~
+        html_div('Value').addClass('col-lg-6')
+    )
+    .addClass('row')|raw
+}}
+~~~
 результат
 ~~~html
 <div class="row">
@@ -122,6 +160,10 @@ echo $el;
 ~~~php
 $el = \HtmlI::addClass('fa fa-bed');
 echo $el;
+~~~
+или в шаблоне Twig
+~~~html
+{{  html_i().addClass('fa fa-bed')|raw  }}
 ~~~
 результат
 ~~~html
@@ -137,6 +179,15 @@ $el = \HtmlImg::setAttribute('data-src',  'holder.js/140x140')
         ->addClass('img-rounded');
 echo $el;
 ~~~
+или в шаблоне Twig
+~~~html
+{{  html_image('/picture.jpg')|raw  }}
+{{  html_image()
+        .setAttribute('data-src',  'holder.js/140x140')
+        .setTitle('A generic square placeholder image with rounded corners')
+        .addClass('img-rounded')|raw
+}}
+~~~
 результат
 ~~~html
     <img src="/picture.jpg">
@@ -150,6 +201,10 @@ $el = \HtmlSpan::addClass('text-success')
     ->setContent('Groove');
 echo $el;
 ~~~
+или в шаблоне Twig
+~~~html
+{{  html_span('Groove').addClass('text-success')|raw  }}
+~~~
 результат
 ~~~html
 <span class="text-success">Groove</span>
@@ -159,6 +214,10 @@ echo $el;
 ~~~php
 $el = \HtmlStrike::setContent('Старая цена: 100руб.');
 echo $el;
+~~~
+или в шаблоне Twig
+~~~html
+{{  html_strike('Старая цена: 100руб.')|raw  }}
 ~~~
 результат
 ~~~html
@@ -170,9 +229,31 @@ echo $el;
 $el = \HtmlStrong::setContent('Важный текст');
 echo $el;
 ~~~
+или в шаблоне Twig
+~~~html
+{{  html_strong('Важный текст')|raw  }}
+~~~
 результат
 ~~~html
 <strong>Важный текст</strong>
+~~~
+
+### Элемент Video
+~~~php
+$el = \HtmlVideo::setSrc('http://ste.com/video.mp4');
+echo $el;
+~~~
+или в шаблоне Twig
+~~~html
+{{ html_video('http://ste.com/video.mp4') }}
+~~~
+результат
+~~~html
+<video>
+    <source src="http://ste.com/video.mp4" type="video/mp4">
+    Тег video не поддерживается вашим браузером
+    <a href="http://ste.com/video.mp4">Скачайте видео</a>
+</video>
 ~~~
 
 ### Элемент Table (таблица)
