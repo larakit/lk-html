@@ -1,6 +1,6 @@
 {
     "name": "larakit/lk-html",
-    "description": "Библиотека для Laravel для генерации HTML",
+    "description": "[Larakit] Библиотека для Laravel для генерации HTML",
     "version": "1.0.0",
     "keywords": [
         "laravel 5",
