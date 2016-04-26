@@ -1,3 +1,7 @@
+[![Total Downloads](https://poser.pugx.org/larakit/lk-html/d/total.svg)](https://packagist.org/packages/larakit/lk-html)
+[![Latest Stable Version](https://poser.pugx.org/larakit/lk-html/v/stable.svg)](https://packagist.org/packages/larakit/lk-html)
+[![Latest Unstable Version](https://poser.pugx.org/larakit/lk-html/v/unstable.svg)](https://packagist.org/packages/larakit/lk-html)
+[![License](https://poser.pugx.org/larakit/lk-html/license.svg)](https://packagist.org/packages/larakit/lk-html)
 #larakit/lk-html
 Библиотека для генерации HTML-сущностей на основе PEAR/HTML_Common2
 
