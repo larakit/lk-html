@@ -24,6 +24,7 @@ Larakit\SPA::register_alias('HtmlTable', Larakit\Html\Facades\Table::class);
 Larakit\SPA::register_alias('HtmlTableRow', Larakit\Html\Facades\TableRow::class);
 Larakit\SPA::register_alias('HtmlTableRowCell', Larakit\Html\Facades\TableRowCell::class);
 Larakit\SPA::register_alias('HtmlLi', Larakit\Html\Facades\Li::class);
+Larakit\SPA::register_alias('HtmlLink', Larakit\Html\Facades\Link::class);
 Larakit\SPA::register_alias('HtmlUl', Larakit\Html\Facades\Ul::class);
 Larakit\SPA::register_alias('HtmlOl', Larakit\Html\Facades\Ol::class);
 Larakit\SPA::register_alias('HtmlVideo', Larakit\Html\Facades\Video::class);
