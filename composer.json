@@ -16,7 +16,7 @@
     ],
     "require": {
         "larakit/lk-twig": "*",
-        "larakit/lk-spa": "*"
+        "larakit/lk-boot": "*"
     },
     "autoload": {
         "psr-4": {
@@ -25,6 +25,5 @@
         "files": [
             "src/init.php"
         ]
-    },
-    "minimum-stability": "dev"
+    }
 }
