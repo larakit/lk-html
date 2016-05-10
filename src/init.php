@@ -15,6 +15,7 @@ Larakit\Boot::register_alias('HtmlDiv', Larakit\Html\Facades\Div::class);
 Larakit\Boot::register_alias('HtmlI', Larakit\Html\Facades\I::class);
 Larakit\Boot::register_alias('HtmlImg', Larakit\Html\Facades\Img::class);
 Larakit\Boot::register_alias('HtmlMap', Larakit\Html\Facades\Map::class);
+Larakit\Boot::register_alias('HtmlMeta', Larakit\Html\Facades\Meta::class);
 Larakit\Boot::register_alias('HtmlSpan', Larakit\Html\Facades\Span::class);
 Larakit\Boot::register_alias('HtmlStrike', Larakit\Html\Facades\Strike::class);
 Larakit\Boot::register_alias('HtmlStrong', Larakit\Html\Facades\Strong::class);
