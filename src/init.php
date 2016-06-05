@@ -29,6 +29,7 @@ Larakit\Boot::register_alias('HtmlLink', Larakit\Html\Facades\Link::class);
 Larakit\Boot::register_alias('HtmlUl', Larakit\Html\Facades\Ul::class);
 Larakit\Boot::register_alias('HtmlOl', Larakit\Html\Facades\Ol::class);
 Larakit\Boot::register_alias('HtmlVideo', Larakit\Html\Facades\Video::class);
+Larakit\Boot::register_alias('HtmlBase', Larakit\Html\Facades\Base::class);
 
 //######################################################################
 // регистрируем функции
