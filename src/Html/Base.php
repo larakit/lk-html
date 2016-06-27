@@ -9,7 +9,7 @@ namespace Larakit\Html;
 class Base extends LHtml {
 
     protected $_type       = 'base';
-    protected $_has_closed = true;
+    protected $_has_closed = false;
 
     function setHref($value) {
         $this->setAttribute('href', $value);
