@@ -14,6 +14,11 @@ class LHtml extends \HTML_Common2
         return $this;
     }
 
+    function ngApp($value='larakit'){
+        $this->setAttribute('ng-app', $value);
+        return $this;
+    }
+
     function setId($value)
     {
         $this->setAttribute('id', $value);
