@@ -7,9 +7,7 @@ class LHtml extends \HTML_Common2 {
     protected $_content    = '';
     protected $_type       = '';
     protected $_has_closed = true;
-    protected $attributes  = [
-        'lang' => 'ru',
-    ];
+    protected $attributes  = [];
 
     function setValue($value) {
         $this->setAttribute('value', $value);
