@@ -34,75 +34,79 @@ Larakit\Boot::register_alias('HtmlBase', Larakit\Html\Facades\Base::class);
 //######################################################################
 // регистрируем функции
 //######################################################################
-Larakit\Twig::register_function('html_progress', function () {
-    return HtmlProgress::setContent('');
-});
-Larakit\Twig::register_function('html_map', function ($name, $id=null) {
-    return \HtmlMap::setName($name)->setId($id?$id:$name);
-});
-Larakit\Twig::register_function('html_progress_bar', function () {
-    return HtmlProgressBar::setContent('');
-});
-Larakit\Twig::register_function('html_a', function ($url) {
-    return HtmlA::setHref($url)->setContent($url);
-});
-Larakit\Twig::register_function('html_audio', function ($src) {
-    return HtmlAudio::setSrc($src);
-});
-Larakit\Twig::register_function('html_abbr', function ($abbr, $fulltext) {
-    return HtmlAbbr::setContent($abbr)->setTitle($fulltext);
-});
-Larakit\Twig::register_function('html_blockquote', function ($content, $author = null) {
-    return HtmlBlockquote::setContent($content)->setAuthor($author);
-});
-Larakit\Twig::register_function('html_button', function ($content) {
-    return HtmlButton::setContent($content);
-});
-Larakit\Twig::register_function('html_div', function ($content = null) {
-    return HtmlDiv::setContent($content);
-});
-Larakit\Twig::register_function('html_i', function ($content = null) {
-    return HtmlI::setContent($content);
-});
-Larakit\Twig::register_function('html_span', function ($content = null) {
-    return HtmlSpan::setContent($content);
-});
-Larakit\Twig::register_function('html_strike', function ($content = null) {
-    return HtmlStrike::setContent($content);
-});
-Larakit\Twig::register_function('html_strong', function ($content = null) {
-    return HtmlStrong::setContent($content);
-});
-Larakit\Twig::register_function('html_sup', function ($content = null) {
-    return HtmlSup::setContent($content);
-});
-Larakit\Twig::register_function('html_sub', function ($content = null) {
-    return HtmlSub::setContent($content);
-});
-Larakit\Twig::register_function('html_ul', function ($items=[]) {
-    $list = HtmlUl::setContent(null);
-    if(count($items)){
-        foreach($items as $item){
-            $list->addItem($item);
+if(class_exists('Larakit\Twig')) {
+    Larakit\Twig::register_function('html_progress', function () {
+        return HtmlProgress::setContent('');
+    });
+    Larakit\Twig::register_function('html_map', function ($name, $id = null) {
+        return \HtmlMap::setName($name)->setId($id ? $id : $name);
+    });
+    Larakit\Twig::register_function('html_progress_bar', function () {
+        return HtmlProgressBar::setContent('');
+    });
+    Larakit\Twig::register_function('html_a', function ($url) {
+        return HtmlA::setHref($url)->setContent($url);
+    });
+    Larakit\Twig::register_function('html_audio', function ($src) {
+        return HtmlAudio::setSrc($src);
+    });
+    Larakit\Twig::register_function('html_abbr', function ($abbr, $fulltext) {
+        return HtmlAbbr::setContent($abbr)->setTitle($fulltext);
+    });
+    Larakit\Twig::register_function('html_blockquote', function ($content, $author = null) {
+        return HtmlBlockquote::setContent($content)->setAuthor($author);
+    });
+    Larakit\Twig::register_function('html_button', function ($content) {
+        return HtmlButton::setContent($content);
+    });
+    Larakit\Twig::register_function('html_div', function ($content = null) {
+        return HtmlDiv::setContent($content);
+    });
+    Larakit\Twig::register_function('html_i', function ($content = null) {
+        return HtmlI::setContent($content);
+    });
+    Larakit\Twig::register_function('html_span', function ($content = null) {
+        return HtmlSpan::setContent($content);
+    });
+    Larakit\Twig::register_function('html_strike', function ($content = null) {
+        return HtmlStrike::setContent($content);
+    });
+    Larakit\Twig::register_function('html_strong', function ($content = null) {
+        return HtmlStrong::setContent($content);
+    });
+    Larakit\Twig::register_function('html_sup', function ($content = null) {
+        return HtmlSup::setContent($content);
+    });
+    Larakit\Twig::register_function('html_sub', function ($content = null) {
+        return HtmlSub::setContent($content);
+    });
+    Larakit\Twig::register_function('html_ul', function ($items = []) {
+        $list = HtmlUl::setContent(null);
+        if(count($items)) {
+            foreach($items as $item) {
+                $list->addItem($item);
+            }
         }
-    }
-    return $list;
-});
-Larakit\Twig::register_function('html_ol', function ($items=[]) {
-    $list = HtmlOl::setContent(null);
-    if(count($items)){
-        foreach($items as $item){
-            $list->addItem($item);
+        
+        return $list;
+    });
+    Larakit\Twig::register_function('html_ol', function ($items = []) {
+        $list = HtmlOl::setContent(null);
+        if(count($items)) {
+            foreach($items as $item) {
+                $list->addItem($item);
+            }
         }
-    }
-    return $list;
-});
-Larakit\Twig::register_function('html_table', function ($class = 'table table-striped table-bordered table-condensed') {
-    return HtmlTable::addClass($class);
-});
-Larakit\Twig::register_function('html_image', function ($src = null) {
-    return HtmlImg::setSrc($src);
-});
-Larakit\Twig::register_function('html_video', function ($src = null) {
-    return HtmlVideo::setSrc($src);
-});
+        
+        return $list;
+    });
+    Larakit\Twig::register_function('html_table', function ($class = 'table table-striped table-bordered table-condensed') {
+        return HtmlTable::addClass($class);
+    });
+    Larakit\Twig::register_function('html_image', function ($src = null) {
+        return HtmlImg::setSrc($src);
+    });
+    Larakit\Twig::register_function('html_video', function ($src = null) {
+        return HtmlVideo::setSrc($src);
+    });
+}

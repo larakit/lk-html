@@ -16,7 +16,6 @@
     ],
     "require": {
         "pear/html_common2": "*",
-        "larakit/lk-twig": "*",
         "larakit/lk-boot": "*"
     },
     "autoload": {
