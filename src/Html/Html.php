@@ -11,7 +11,7 @@ class Html extends LHtml {
     protected $_type       = 'html';
     protected $_has_closed = true;
     
-    function ngApp($value = 'ng-larakit') {
+    function ngApp($value = 'larakit') {
         $this->setAttribute('ng-app', $value);
         
         return $this;
